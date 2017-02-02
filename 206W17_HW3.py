@@ -3,7 +3,7 @@ import re
 
 ## SI 206 - W17 - HW3
 ## COMMENT WITH:
-## Your section day/time:
+## Your section day/time: Friday, 9:00AM
 ## Any names of people you worked with on this assignment:
 
 #####################
@@ -20,7 +20,15 @@ import re
 
 ## Write code to define your parse_counted_words function here.
 
-
+def parse_counted_words(text):
+    result = re.findall("[0-9]+ \W?\w*[A-z]", text)
+    if (len(result) > 0):
+        ## Generate tuple
+        toPrint = result[-1]
+        toPrint = toPrint.split()
+        return (toPrint[0], toPrint[1])
+    else:
+        return None
 
 
 ## PART 2: 200 points
